@@ -14,6 +14,7 @@ function ejecutar(){
    const respuesta = trapecio.calcular_area_trap()
     
    document.getElementById("resultado").textContent='area trapecio'+respuesta
+   
 }
 
 document.getElementById("btn").addEventListener("click",ejecutar)
