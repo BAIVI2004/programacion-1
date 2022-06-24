@@ -2,6 +2,8 @@
 //creamos un arreglo de string
 let series = [`breaking bad`,`okupas`,`narco`,`casados con hijos`,`peaky blinders`]
 
+const dato = series[1]
+
 //como conocer la longitud de array
 const longitud = series.length
 console.log(`longitud del arreglo:`+longitud)
@@ -34,6 +36,8 @@ console.log(series)
 //como elimino el primer elemento de un arreglo
 series.shift()
 console.log(series)
+
+//obtener el indice de un elemento.
 const indice = series.indexOf("casados con hijos")
 console.log(`indice obtenido:`+indice)
 

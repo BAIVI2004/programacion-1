@@ -1,7 +1,7 @@
 export default class Batman{
 
    constructor() {
-      alert('probando cnstructor')
+      alert('probando constructor')
    }
 
 
@@ -13,7 +13,7 @@ export default class Batman{
 
         for (const element of peliculas_definitivas.Search){
 
-        let columna=
+        let columnas=
         <div class="col-lg-3">
 
            <div class="card">
