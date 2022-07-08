@@ -54,9 +54,12 @@ export default class Producto{
             <td>${element.precio}</td>
             <td>${element.categoria}</td>
             <td>
-               <button class="btn btn-danger btn-sm">
+               <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm">
                   <i class="fa fa-trash"></i>
                </button>
+               <button onclick="editar(${index})" class="btn btn primary btn-sm">
+                     <i class="fa fa-edit"></i>
+                </button>     
             </td>
           
          </tr>`
@@ -65,4 +68,37 @@ export default class Producto{
       });
       document.getElementById("tbody").innerHTML=filas.join('')
    }
+
+   eliminar_producto(indice)
+   {
+    let lista_productos = JSON.parse( localStorage.getItem("Productos"))
+
+      lista_productos.splice(indice,1)
+
+    localStorage.setItem("Productos",JSON.stringify(lista_productos))
+
+    this.obtener_productos()
+   }
+
+   actualizar_producto()
+   {
+      let indice = localStorage.getItem("indice") 
+
+      let listado_productos = JSON.parse(localStorage.getItem("Productos"))
+
+      listado_productos[indice].descripcion = document.getElementById("inp_descripcion").value
+      listado_productos[indice].precio = document.getElementById("inp_precio").value
+      listado_productos[indice].categoria = document.getElementById("slt_cat").value
+
+      localStorage.setItem("Productos",JSON.stringify(listado_productos))
+
+      this.obtener_productos()
+
+
+      document.getElementById("btn_actualizar").style.display="block"
+      document.getElementById("btn_guardar").style.display="none"
+
+   }
+
 }
+
